@@ -1,11 +1,13 @@
 DESTDIR?=/
 PREFIX?=/usr
 BINDIR=${PREFIX}/bin
+INSTALL_SCRIPT=install -m755
 
 all:
 
 install:
-	cp -f yt yt-play ${DESTDIR}/${BINDIR}
+	${INSTALL_SCRIPT} yt ${DESTDIR}/${BINDIR}
+	${INSTALL_SCRIPT} yt-play ${DESTDIR}/${BINDIR}
 
 uninstall:
 	rm -f ${DESTDIR}/${BINDIR}/yt
